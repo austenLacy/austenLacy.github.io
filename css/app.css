@@ -13,7 +13,6 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "PT Sans", sans-serif;
   color: #fff;
   background-color: #101524;
 }
@@ -29,8 +28,37 @@ a {
 }
 
 /* --------------------------------
+Utility Classes
+-------------------------------- */
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.bottom-margin-sm {
+  margin: 0px 0px 14px 0px;
+}
+
+/* -------------------------------
 Main Components
 -------------------------------- */
+.resume-container {
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.about-me-section {
+  margin-bottom: -9999px !important;
+  padding-bottom: 9999px !important;
+}
+
+.section p.flow-text {
+  font-size: 1.45rem;
+}
+
 .projects-container {
   height: 100vh;
   width: 100vw;
@@ -287,10 +315,7 @@ Main Components
   opacity: 1;
 }
 .cd-project-info p {
-  width: 90%;
   max-width: 800px;
-  margin: 0 auto;
-  line-height: 2;
 }
 @media only screen and (min-width: 1024px) {
   .cd-project-info {
