@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+jQuery(document).ready(function ($) {
 	//check if background-images have been loaded and show list items
 	$('.cd-single-project').bgLoaded({
 	  	afterLoaded : function(){
@@ -76,8 +76,8 @@ jQuery(document).ready(function($){
  * Copyright (c) 2014 Jonathan Catmull
  * Licensed under the MIT license.
  */
- (function($){
- 	$.fn.bgLoaded = function(custom) {
+ (function ($) {
+ 	$.fn.bgLoaded = function (custom) {
 	 	var self = this;
 
 		// Default plugin settings
@@ -94,12 +94,12 @@ jQuery(document).ready(function($){
 		self.each(function(){
 			var $this = $(this),
 				bgImgs = window.getComputedStyle($this.get(0), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "").split(', ');
-			$this.data('loaded-count',0);
-			$.each( bgImgs, function(key, value){
+			$this.data('loaded-count', 0);
+			$.each(bgImgs, function(key, value){
 				var img = value.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
 				$('<img/>').attr('src', img).load(function() {
 					$(this).remove(); // prevent memory leaks
-					$this.data('loaded-count',$this.data('loaded-count')+1);
+					$this.data('loaded-count', $this.data('loaded-count')+1);
 					if ($this.data('loaded-count') >= bgImgs.length) {
 						settings.afterLoaded.call($this);
 					}
